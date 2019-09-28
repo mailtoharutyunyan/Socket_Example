@@ -1,8 +1,8 @@
 // Make connection
-var socket = io.connect('http://localhost:4000');
+const socket = io.connect('http://localhost:4000');
 
 // Query DOM
-var message = document.getElementById('message'),
+const message = document.getElementById('message'),
       handle = document.getElementById('handle'),
       btn = document.getElementById('send'),
       output = document.getElementById('output'),
@@ -19,7 +19,7 @@ btn.addEventListener('click', function(){
 
 message.addEventListener('keypress', function(){
     socket.emit('typing', handle.value);
-})
+});
 
 // Listen for events
 socket.on('chat', function(data){
